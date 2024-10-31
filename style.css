@@ -1,0 +1,153 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #000428, #004e92);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    animation: bgAnimation 5s ease-in-out infinite; /* 애니메이션 속도 조정 */
+}
+
+@keyframes bgAnimation {
+    0% {
+        background: linear-gradient(135deg, #000428, #004e92);
+    }
+    10% {
+        background: linear-gradient(135deg, #001f3f, #005f99);
+    }
+    20% {
+        background: linear-gradient(135deg, #003366, #0077cc);
+    }
+    30% {
+        background: linear-gradient(135deg, #005f99, #00bfff);
+    }
+    40% {
+        background: linear-gradient(135deg, #0077cc, #004e92);
+    }
+    50% {
+        background: linear-gradient(135deg, #004e92, #001f3f);
+    }
+    60% {
+        background: linear-gradient(135deg, #005f99, #003366);
+    }
+    70% {
+        background: linear-gradient(135deg, #003366, #001f3f);
+    }
+    80% {
+        background: linear-gradient(135deg, #001f3f, #000428);
+    }
+    90% {
+        background: linear-gradient(135deg, #000428, #004e92);
+    }
+    100% {
+        background: linear-gradient(135deg, #000428, #004e92);
+    }
+}
+
+.container {
+    background: rgba(255, 255, 255, 10); /* 반투명 효과 조정 */
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    animation: fadeIn 1s ease; /* 기존 fadeIn 애니메이션 유지 */
+    border: 5px solid transparent; /* 그라데이션 테두리 */
+    background-image: linear-gradient(white, white), linear-gradient(45deg, #ffcc00, #1e90ff);
+    background-clip: padding-box, border-box;
+    border-image: linear-gradient(45deg, #ffcc00, #1e90ff) 1; /* 그라데이션 애니메이션 */
+    animation: borderAnimation 3s infinite alternate;
+}
+
+@keyframes borderAnimation {
+    0% {
+        border-image-source: linear-gradient(45deg, #ffcc00, #1e90ff);
+    }
+    100% {
+        border-image-source: linear-gradient(45deg, #1e90ff, #ffcc00);
+    }
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: black; /* 글 색 변경 */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    resize: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    overflow: hidden; /* 메모 내용이 삐져나오는 문제 해결 */
+}
+
+textarea:focus {
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+    outline: none;
+}
+
+button {
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #00bfff;
+}
+
+.memo {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    animation: star 1.5s infinite alternate;
+}
+
+/* 지우기 버튼의 margin-left 추가 */
+.memo button {
+    margin-left: 10px; /* 지우기 버튼과의 간격 */
+}
